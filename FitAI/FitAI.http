@@ -1,0 +1,10 @@
+POST https://localhost:7140/api/outfit/recommend
+Content-Type: application/json
+
+{
+  "city": "İstanbul",
+  "gender": "Erkek",
+  "style": "Casual",
+  "eventType": "Kahve",
+  "colorPreference": "Siyah"
+}
