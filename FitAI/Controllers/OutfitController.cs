@@ -10,17 +10,32 @@ namespace FitAI.Controllers
     {
         private readonly OutfitService _outfitService;
 
-        public OutfitController()
+        public OutfitController(OutfitService outfitService)
         {
-            _outfitService = new OutfitService();
+            _outfitService = outfitService;
         }
 
         [HttpPost("recommend")]
-        public IActionResult RecommendOutfit([FromBody] OutfitRequest request)
+        public async Task<IActionResult> RecommendOutfit([FromBody] OutfitRequest request)
         {
-            var recommendations = _outfitService.GenerateOutfits(request);
+            var recommendation = await _outfitService.GenerateOutfitAsync(request);
 
-            return Ok(recommendations);
+            return Ok(new
+            {
+                recommendation
+            });
         }
+        [HttpPost("weather")]
+        public async Task<IActionResult> GetWeather([FromBody] OutfitRequest request)
+        {
+            var weather = await _outfitService.GetWeatherInfoAsync(request.City);
+
+            return Ok(new
+            {
+                city = request.City,
+                weather = weather
+            });
+        }
+        
     }
 }

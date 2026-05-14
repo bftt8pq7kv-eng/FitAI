@@ -1,4 +1,4 @@
-POST https://localhost:7140/api/outfit/recommend
+POST https://localhost:7140/api/Outfit/recommend
 Content-Type: application/json
 
 {

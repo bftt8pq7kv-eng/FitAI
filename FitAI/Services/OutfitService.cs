@@ -1,50 +1,46 @@
 ﻿using FitAI.Models;
+using OpenAI.Chat;
 
 namespace FitAI.Services
 {
     public class OutfitService
     {
-        public List<OutfitRecommendation> GenerateOutfits(OutfitRequest request)
+        private readonly IConfiguration _configuration;
+        private readonly WeatherService _weatherService;
+
+        public OutfitService(IConfiguration configuration, WeatherService weatherService)
         {
-            var outfits = new List<OutfitRecommendation>();
+            _configuration = configuration;
+            _weatherService = weatherService;
+        }
 
-            outfits.Add(new OutfitRecommendation
-            {
-                Id = 1,
-                Title = "Casual Günlük Kombin",
-                UpperWear = "Beyaz Oversize Tişört",
-                LowerWear = "Siyah Baggy Jean",
-                Shoes = "Beyaz Sneaker",
-                OuterWear = "Kot Ceket",
-                Accessory = "Gümüş Kolye",
-                Reason = $"{request.City} hava durumuna ve {request.Style} tarzına uygun rahat kombin."
-            });
+        public async Task<string> GenerateOutfitAsync(OutfitRequest request)
+        {
+            var apiKey = _configuration["OpenAI:ApiKey"];
 
-            outfits.Add(new OutfitRecommendation
-            {
-                Id = 2,
-                Title = "Minimal Şehir Kombini",
-                UpperWear = "Bej Sweatshirt",
-                LowerWear = "Krem Kumaş Pantolon",
-                Shoes = "Chunky Sneaker",
-                OuterWear = "Trench Coat",
-                Accessory = "Deri Saat",
-                Reason = $"{request.EventType} etkinliği için modern görünüm."
-            });
+            var weather = await _weatherService.GetWeatherAsync(request.City);
 
-            outfits.Add(new OutfitRecommendation
-            {
-                Id = 3,
-                Title = "Spor Kombin",
-                UpperWear = "Dry-fit Hoodie",
-                LowerWear = "Jogger",
-                Shoes = "Running Ayakkabı",
-                OuterWear = "Şişme Yelek",
-                Accessory = "Sırt Çantası",
-                Reason = $"{request.Gender} kullanıcı için dinamik kombin önerisi."
-            });
+            var client = new ChatClient("gpt-4.1-mini", apiKey);
 
-            return outfits;
+            var prompt = $@"
+Şehir: {request.City}
+Hava durumu: {weather}
+Cinsiyet: {request.Gender}
+Tarz: {request.Style}
+Etkinlik: {request.EventType}
+Renk tercihi: {request.ColorPreference}
+
+Bu kullanıcı için hava durumuna ve tarzına uygun kombin önerisi yap.
+Üst giyim, alt giyim, ayakkabı, dış giyim, aksesuar ve kısa gerekçe ver.
+";
+
+            var completion = await client.CompleteChatAsync(prompt);
+
+            return completion.Value.Content[0].Text;
+        }
+        public async Task<string> GetWeatherInfoAsync(string city)
+        {
+            return await _weatherService.GetWeatherAsync(city);
         }
     }
 }
