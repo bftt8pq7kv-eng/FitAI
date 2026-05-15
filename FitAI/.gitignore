@@ -1,1 +1,4 @@
-﻿appsettings.Development.json
+﻿# database files
+*.db
+*.db-shm
+*.db-wal
