@@ -161,6 +161,7 @@
                 font-size: 38px;
             }
         }
+
         .outfit-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -202,6 +203,7 @@
                 color: rgba(255,255,255,0.7);
                 line-height: 1.5;
             }
+
         .ai-result h2 {
             color: white;
             font-size: 30px;
@@ -238,6 +240,7 @@
                 opacity: 0.5;
             }
         }
+
         .ai-panel {
             background: rgba(8, 15, 40, 0.75);
             border: 1px solid rgba(255,255,255,0.08);
@@ -251,6 +254,7 @@
                 transform: translateY(-2px);
                 transition: 0.3s ease;
             }
+
         .result-card {
             min-height: 320px;
             transition: 0.4s ease;
@@ -287,8 +291,6 @@
             border: 1px solid #ff66c4;
             box-shadow: 0 0 18px rgba(255,102,196,0.4);
         }
-
-
     </style>
 </head>
 
@@ -401,9 +403,11 @@
     </div>
 
     <script>
+
         async function getRecommendation() {
             const resultBox = document.getElementById("result");
             const weatherText = document.getElementById("weatherText");
+            const icon = document.getElementById("weatherIcon");
 
             const data = {
                 city: document.getElementById("city").value,
@@ -425,45 +429,54 @@
                     body: JSON.stringify(data)
                 });
 
+                if (!response.ok) {
+                    throw new Error("API hatası");
+                }
+
                 const result = await response.json();
 
-                weatherText.innerText = data.city + " hava durumuna göre kombin önerisi oluşturuldu.";
-                resultBox.innerHTML = `
-            <div class="ai-result">
-                <h2>✨ Sana Özel Kombin</h2>
-                <div class="result-text">
-                ${result.recommendation
-                        .replace(/\n/g, "<br>")
-                        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")}
+                const formattedRecommendation = result.recommendation.replace(/\n/g, "<br>");
 
-                </div>
-            </div>
-`;
+                weatherText.innerText = data.city + " hava durumuna göre kombin önerisi oluşturuldu.";
+
+                resultBox.innerHTML =
+                    "<div class='ai-result'>" +
+                    "<h2>✨ Sana Özel Kombin</h2>" +
+                    "<div class='result-text'>" +
+                    formattedRecommendation +
+                    "</div>" +
+                    "</div>";
+
+                const weatherLower = result.recommendation.toLowerCase();
+
+                if (weatherLower.includes("yağmur")) {
+                    icon.innerText = "🌧️";
+                }
+                else if (weatherLower.includes("güneş")) {
+                    icon.innerText = "☀️";
+                }
+                else if (weatherLower.includes("bulut")) {
+                    icon.innerText = "☁️";
+                }
+                else if (weatherLower.includes("kar")) {
+                    icon.innerText = "❄️";
+                }
+                else {
+                    icon.innerText = "⛅";
+                }
             }
             catch (error) {
-                resultBox.innerText = "Bir hata oluştu. Backend API'nin çalıştığını kontrol et.";
+                resultBox.innerText = "Bir hata oluştu. Backend API'nin çalıştığını ve API anahtarının doğru olduğunu kontrol et.";
             }
         }
+
+
+
+
+
     </script>
-    const result = await response.json();
-    const icon = document.getElementById("weatherIcon");
+  
+  
 
-    const weatherLower = result.recommendation.toLowerCase();
-
-    if (weatherLower.includes("yağmur")) {
-    icon.innerText = "🌧️";
-    }
-    else if (weatherLower.includes("güneş")) {
-    icon.innerText = "☀️";
-    }
-    else if (weatherLower.includes("bulut")) {
-    icon.innerText = "☁️";
-    }
-    else if (weatherLower.includes("kar")) {
-    icon.innerText = "❄️";
-    }
-    else {
-    icon.innerText = "⛅";
-    }
 </body>
 </html>
