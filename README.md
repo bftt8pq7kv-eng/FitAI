@@ -1,4 +1,4 @@
-# 👗 FitAI — AI Powered Smart Outfit Assistant
+<img width="1434" height="451" alt="image" src="https://github.com/user-attachments/assets/845c51ee-ed11-4c18-972c-5d8c012a9ffe" /># 👗 FitAI — AI Powered Smart Outfit Assistant
 
 FitAI is an AI-powered fashion recommendation web application developed with ASP.NET Core and OpenAI integration.
 
@@ -76,11 +76,89 @@ Users can customize:
 | GitHub | Version control |
 
 ---
+# 📂 Proje Mimarisi
 
-# 📂 Project Architecture
+```text
+FitAI/
+│
+├── Controllers/        → API endpointleri
+├── Services/           → Yapay zeka ve hava durumu servisleri
+├── Models/             → Veri modelleri
+├── Data/               → Entity Framework DbContext
+├── Migrations/         → SQLite migration dosyaları
+├── wwwroot/            → Frontend dosyaları
+└── Program.cs          → Uygulama başlangıç yapılandırması
+```
 
-```text id="u4c6m9"
-Controllers/
-Services/
-Models/
-wwwroot/
+---
+
+# 🧠 Yazılım Mimarisi ve Teknik Yaklaşım
+
+Proje katmanlı mimari yaklaşımıyla geliştirilmiştir.
+
+Uygulama içerisinde:
+
+- Controller katmanı → HTTP isteklerini yönetir
+- Service katmanı → iş mantığını içerir
+- Model katmanı → veri yapılarını temsil eder
+- Data katmanı → veritabanı işlemlerini yönetir
+
+Bu yapı sayesinde:
+
+- okunabilirlik
+- sürdürülebilirlik
+- test edilebilirlik
+- modülerlik
+
+arttırılmıştır.
+
+Projede SOLID prensiplerine uygun servis ayrımı uygulanmıştır.
+
+---
+
+# 🗄️ Veritabanı Yapısı
+
+Projede SQLite veritabanı kullanılmıştır.
+
+Entity Framework Core kullanılarak:
+
+- migration yönetimi
+- tablo oluşturma
+- veri kayıt işlemleri
+
+gerçekleştirilmiştir.
+
+Saklanan temel veriler:
+
+- şehir bilgisi
+- kullanıcı tercihleri
+- stil türü
+- aktivite bilgisi
+- oluşturulan kombin önerisi
+- oluşturulma tarihi
+
+---
+
+# 🔍 API Test Süreci
+
+API endpointleri Swagger UI üzerinden test edilmiştir.
+
+Swagger üzerinden:
+
+- request gönderme
+- response doğrulama
+- JSON veri kontrolü
+- endpoint doğrulama
+
+işlemleri gerçekleştirilmiştir.
+
+Swagger erişimi:
+
+```bash
+https://localhost:7140/swagger
+```
+
+
+
+
+
