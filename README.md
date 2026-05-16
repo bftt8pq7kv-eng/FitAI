@@ -1,4 +1,4 @@
-<img width="1434" height="451" alt="image" src="https://github.com/user-attachments/assets/845c51ee-ed11-4c18-972c-5d8c012a9ffe" /># 👗 FitAI — AI Powered Smart Outfit Assistant
+
 
 FitAI is an AI-powered fashion recommendation web application developed with ASP.NET Core and OpenAI integration.
 
