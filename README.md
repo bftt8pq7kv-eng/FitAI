@@ -116,3 +116,4 @@ FitAI/
 ├── Migrations/         → SQLite migration dosyaları
 ├── wwwroot/            → Frontend dosyaları
 └── Program.cs          → Uygulama başlangıç yapılandırması
+``` 
