@@ -116,4 +116,36 @@ FitAI/
 ├── Migrations/         → SQLite migration dosyaları
 ├── wwwroot/            → Frontend dosyaları
 └── Program.cs          → Uygulama başlangıç yapılandırması
-``` 
+```
+---
+
+# 📸 Uygulama Görselleri
+
+## 🏠 Ana Sayfa
+
+Kullanıcıdan kombin bilgileri alınır ve yapay zekâ destekli öneri oluşturulur.
+
+<img width="100%" src="BURAYA_SCREENSHOT_LINKI">
+
+---
+
+# 🔌 API Endpointleri
+
+| Endpoint | Açıklama |
+|---|---|
+| POST /api/Outfit/recommend | Kombin önerisi oluşturur |
+| POST /api/Outfit/weather | Hava durumu bilgisi getirir |
+
+---
+
+# 👨‍💻 Geliştirici
+
+### Beyza Usluoğlu
+
+ASP.NET Core ve yapay zekâ teknolojileri üzerine geliştirme çalışmaları.
+
+---
+
+# ⭐ Proje Durumu
+
+🟢 Aktif geliştirme aşamasında.
