@@ -1,164 +1,118 @@
+# 👗 FitAI — Yapay Zekâ Destekli Akıllı Kombin Asistanı
 
+<p align="center">
+  <img width="180" src="https://cdn-icons-png.flaticon.com/512/892/892458.png">
+</p>
 
-FitAI is an AI-powered fashion recommendation web application developed with ASP.NET Core and OpenAI integration.
+<p align="center">
+  <b>ASP.NET Core</b> ve <b>Yapay Zekâ Teknolojileri</b> kullanılarak geliştirilmiş modern kombin öneri sistemi.
+</p>
 
-The application analyzes:
-- weather conditions
-- user style
-- preferred colors
-- activity type
-- gender preferences
-
-and generates personalized outfit combinations instantly.
-
----
-
-# ✨ Project Purpose
-
-Choosing clothes every day can be difficult depending on:
-- weather
-- social environment
-- comfort
-- color harmony
-- activity type
-
-FitAI simplifies this process using artificial intelligence and creates smart outfit suggestions for users.
+<p align="center">
+  🌤️ Hava Durumu Analizi • 🤖 Yapay Zekâ • 🎨 Stil Önerileri • 👟 Kombin Tavsiyesi
+</p>
 
 ---
 
-# 🚀 Features
+# ✨ Proje Hakkında
 
-## 🌦️ Weather Based Recommendations
-The system generates combinations according to:
-- temperature
-- seasonal conditions
-- daily weather
+FitAI, kullanıcı tercihlerini analiz ederek kişiselleştirilmiş kıyafet kombinleri oluşturan modern bir web uygulamasıdır.
 
----
+Kullanıcıdan alınan:
 
-## 🤖 AI Supported Styling
-OpenAI integration creates:
-- upper clothing suggestions
-- lower clothing suggestions
-- shoes
-- accessories
-- style explanations
+- 📍 Şehir bilgisi
+- 🌦️ Hava durumu
+- 👤 Cinsiyet
+- 👕 Stil tercihi
+- 🎯 Etkinlik türü
+- 🎨 Renk seçimi
+
+verileri analiz edilerek yapay zekâ destekli kombin önerileri oluşturulur.
 
 ---
 
-## 🎨 Personalized Experience
-Users can customize:
-- favorite colors
-- clothing style
-- activity type
-- outfit mood
+# 🚀 Temel Özellikler
+
+## 🌤️ Hava Durumuna Göre Kombin
+
+Sistem hava koşullarını analiz ederek:
+
+- sıcaklık
+- mevsim
+- günlük hava durumu
+- dış ortam koşulları
+
+bilgilerine uygun kıyafet önerileri sunar.
 
 ---
 
-## 📱 Modern UI
-- responsive design
-- gradient modern interface
-- mobile compatible layout
-- animated loading states
+## 🤖 Yapay Zekâ Destekli Öneri Sistemi
+
+OpenAI entegrasyonu sayesinde sistem:
+
+- üst giyim önerileri
+- alt giyim önerileri
+- ayakkabı seçimi
+- aksesuar önerileri
+- stil açıklamaları
+
+oluşturabilmektedir.
 
 ---
 
-# 🛠️ Technologies Used
+## 🎨 Kişiselleştirilmiş Deneyim
 
-| Technology | Purpose |
+Kullanıcılar:
+
+- favori renklerini
+- giyim tarzlarını
+- etkinlik türünü
+- kombin havasını
+
+özelleştirebilir.
+
+---
+
+## 📱 Modern Kullanıcı Arayüzü
+
+Uygulama içerisinde:
+
+- responsive tasarım
+- modern gradient arayüz
+- mobil uyumluluk
+- animasyonlu yükleme ekranları
+
+kullanılmıştır.
+
+---
+
+# 🛠️ Kullanılan Teknolojiler
+
+| Teknoloji | Kullanım Amacı |
 |---|---|
-| ASP.NET Core | Backend API |
-| HTML | Frontend structure |
-| CSS | UI styling |
-| JavaScript | Dynamic frontend |
-| OpenAI API | AI recommendation engine |
-| REST API | Backend communication |
-| GitHub | Version control |
+| ASP.NET Core | Backend API geliştirme |
+| C# | Uygulama geliştirme dili |
+| HTML5 | Frontend yapısı |
+| CSS3 | Arayüz tasarımı |
+| JavaScript | Dinamik kullanıcı işlemleri |
+| OpenAI API | Yapay zekâ öneri sistemi |
+| REST API | Backend iletişimi |
+| SQLite | Veritabanı |
+| Entity Framework Core | ORM ve veritabanı yönetimi |
+| Swagger | API test ve dokümantasyon |
+| GitHub | Versiyon kontrol sistemi |
 
 ---
+
 # 📂 Proje Mimarisi
 
 ```text
 FitAI/
 │
 ├── Controllers/        → API endpointleri
-├── Services/           → Yapay zeka ve hava durumu servisleri
+├── Services/           → Yapay zekâ ve hava durumu servisleri
 ├── Models/             → Veri modelleri
 ├── Data/               → Entity Framework DbContext
 ├── Migrations/         → SQLite migration dosyaları
 ├── wwwroot/            → Frontend dosyaları
 └── Program.cs          → Uygulama başlangıç yapılandırması
-```
-
----
-
-# 🧠 Yazılım Mimarisi ve Teknik Yaklaşım
-
-Proje katmanlı mimari yaklaşımıyla geliştirilmiştir.
-
-Uygulama içerisinde:
-
-- Controller katmanı → HTTP isteklerini yönetir
-- Service katmanı → iş mantığını içerir
-- Model katmanı → veri yapılarını temsil eder
-- Data katmanı → veritabanı işlemlerini yönetir
-
-Bu yapı sayesinde:
-
-- okunabilirlik
-- sürdürülebilirlik
-- test edilebilirlik
-- modülerlik
-
-arttırılmıştır.
-
-Projede SOLID prensiplerine uygun servis ayrımı uygulanmıştır.
-
----
-
-# 🗄️ Veritabanı Yapısı
-
-Projede SQLite veritabanı kullanılmıştır.
-
-Entity Framework Core kullanılarak:
-
-- migration yönetimi
-- tablo oluşturma
-- veri kayıt işlemleri
-
-gerçekleştirilmiştir.
-
-Saklanan temel veriler:
-
-- şehir bilgisi
-- kullanıcı tercihleri
-- stil türü
-- aktivite bilgisi
-- oluşturulan kombin önerisi
-- oluşturulma tarihi
-
----
-
-# 🔍 API Test Süreci
-
-API endpointleri Swagger UI üzerinden test edilmiştir.
-
-Swagger üzerinden:
-
-- request gönderme
-- response doğrulama
-- JSON veri kontrolü
-- endpoint doğrulama
-
-işlemleri gerçekleştirilmiştir.
-
-Swagger erişimi:
-
-```bash
-https://localhost:7140/swagger
-```
-
-
-
-
-
