@@ -130,9 +130,9 @@ FitAI/
 Kullanıcıdan kombin bilgileri alınır ve yapay zekâ destekli öneri oluşturulur.
 
 <p align="center">
-  <img width="260" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600">
-  <img width="260" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600">
-  <img width="260" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600">
+  <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600" width="250" height="320">
+  <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600" width="250" height="320">
+  <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600" width="250" height="320">
 </p>
 
 ---
