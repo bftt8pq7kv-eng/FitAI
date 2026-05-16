@@ -121,6 +121,8 @@ FitAI/
 
 ---
 
+---
+
 # 📸 Uygulama Görselleri
 
 ## 🏠 Ana Sayfa
@@ -128,7 +130,9 @@ FitAI/
 Kullanıcıdan kombin bilgileri alınır ve yapay zekâ destekli öneri oluşturulur.
 
 <p align="center">
-  <img width="90%" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200">
+  <img width="260" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600">
+  <img width="260" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600">
+  <img width="260" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600">
 </p>
 
 ---
@@ -148,12 +152,6 @@ Kullanıcıdan kombin bilgileri alınır ve yapay zekâ destekli öneri oluştur
 ### 👩 Özlem Karpat
 
 ASP.NET Core ve yapay zekâ teknolojileri üzerine geliştirme çalışmaları.
-
----
-
-# ⭐ Proje Durumu
-
-🟢 Aktif geliştirme aşamasında.
 
 ---
 
